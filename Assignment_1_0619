@@ -1,0 +1,9 @@
+# grep .log files in the directory
+find -name '*.log'
+
+#zip the files that are older than 5 days
+sudo find . -type f -mtime +5 -name '*.log' -exec gzip {} \;
+
+#removing the files that are older than 10 days
+sudo find . -type f -mtime +10 -ls -name '*.log' -exec rm {} \;
+
